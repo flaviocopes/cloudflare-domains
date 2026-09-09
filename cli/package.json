@@ -1,0 +1,33 @@
+{
+  "name": "cloudflare-domains",
+  "version": "1.0.1",
+  "description": "A focused command-line tool for viewing Cloudflare zones and managing DNS records.",
+  "type": "module",
+  "bin": {
+    "cf-domains": "./src/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "check": "node --check src/cli.js && node --check src/cloudflare.js && node --check src/keychain.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "prompts": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "src",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "cloudflare",
+    "dns",
+    "domains",
+    "cli"
+  ],
+  "license": "MIT"
+}

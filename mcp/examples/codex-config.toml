@@ -1,0 +1,19 @@
+[mcp_servers.cloudflare_domains]
+command = "/absolute/path/to/node"
+args = ["/absolute/path/to/cloudflare-domain-mcp/dist/server.js"]
+cwd = "/absolute/path/to/cloudflare-domain-mcp"
+enabled_tools = [
+  "search_domains",
+  "check_domain_availability",
+  "quote_domain_purchase",
+  "purchase_domain",
+]
+default_tools_approval_mode = "auto"
+
+[mcp_servers.cloudflare_domains.env]
+CLOUDFLARE_ACCOUNT_ID = "your-cloudflare-account-id"
+CLOUDFLARE_KEYCHAIN_SERVICE = "cloudflare.domain-registrar-mcp"
+CLOUDFLARE_KEYCHAIN_ACCOUNT = "your-macos-username"
+
+[mcp_servers.cloudflare_domains.tools.purchase_domain]
+approval_mode = "prompt"

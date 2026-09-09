@@ -1,0 +1,45 @@
+{
+  "name": "cloudflare-domain-mcp",
+  "version": "1.0.1",
+  "description": "A local MCP server for Cloudflare domain search, availability checks, quotes, and approval-gated registration.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "cloudflare",
+    "domains",
+    "mcp",
+    "model-context-protocol",
+    "registrar"
+  ],
+  "bin": {
+    "cloudflare-domain-mcp": "dist/server.js"
+  },
+  "files": [
+    "dist",
+    "examples",
+    "LICENSE",
+    "README.md",
+    "scripts"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "check": "tsc -p tsconfig.json --noEmit",
+    "keychain:store": "bash scripts/store-token-macos.sh",
+    "live-check": "npm run build && node scripts/live-check.mjs",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "start": "node dist/server.js",
+    "test": "node --test --import tsx 'test/**/*.test.ts'"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "tsx": "^4.23.5",
+    "typescript": "^7.0.2"
+  }
+}

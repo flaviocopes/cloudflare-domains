@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "cloudflare-domains": {
+      "command": "/absolute/path/to/node",
+      "args": [
+        "/absolute/path/to/cloudflare-domain-mcp/dist/server.js"
+      ],
+      "env": {
+        "CLOUDFLARE_ACCOUNT_ID": "your-cloudflare-account-id",
+        "CLOUDFLARE_KEYCHAIN_SERVICE": "cloudflare.domain-registrar-mcp",
+        "CLOUDFLARE_KEYCHAIN_ACCOUNT": "your-macos-username"
+      }
+    }
+  }
+}
